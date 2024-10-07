@@ -7,6 +7,8 @@ import Content from './Components/contents';
 import Header from './Components/header';
 import Footer from './Components/footer';
 import NavigationBar from './Components/navigationbar';
+import Read from './Components/read';
+
 
 function App() {
   return (
@@ -16,8 +18,8 @@ function App() {
       <NavigationBar/>
       <Routes>
       <Route path="/home" element={<Content />} />
-        <Route path="/read" element={<h1>Footer Component</h1>} />
-        <Route path="/create" element={<h1>Header Component</h1>} />
+        <Route path="/read" element={<Read />} />
+        <Route path="/create" element={<Footer />} />
       </Routes>
       <Footer />
     </div>
