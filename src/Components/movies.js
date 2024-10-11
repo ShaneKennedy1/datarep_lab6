@@ -1,14 +1,16 @@
 import MovieItem from "./movieitem";
 
-//component to create a list of movies
-const Movies = (props)=>{
+// This component returns a mapped array of MovieItem components
+const Movies = (props) => {
     
-        return props.myMovies.map(
-           //create a movie item for each movie in the array
-            (movie)=>{
-                return <MovieItem myMovie ={movie} key={movie.imdbID}></MovieItem>
-            }
-        );
-    
+    // Each item in props.myMovies array is passed as the myMovie prop to MovieItem
+    return props.myMovies.map(
+        // Create a MovieItem component for each movie in the array
+        (movie) => {
+            // Use the movie's imdbID as a unique key
+            return <MovieItem myMovie={movie} key={movie.imdbID}></MovieItem>
+        }
+    );
 }
-export default Movies;
+// Export the Movies component so it can be used in other parts of the app
+export default Movies; 

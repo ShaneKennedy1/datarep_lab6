@@ -1,14 +1,16 @@
+// Import the Movies component to render the list of movies
 import Movies from "./movies";
-const Read = ()=>{
 
-    const data =
-    [
+const Read = () => {
+
+    // Movie data array containing information about movies
+    const data = [
         {
-          "Title": "Avengers: Infinity War",
-          "Year": "2018",
-          "imdbID": "tt4154756",
-          "Type": "movie",
-          "Poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+          "Title": "Avengers: Infinity War", 
+          "Year": "2018",                    
+          "imdbID": "tt4154756",            
+          "Type": "movie",                   
+          "Poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg" 
         },
         {
           "Title": "Captain America: Civil War",
@@ -24,13 +26,18 @@ const Read = ()=>{
           "Type": "movie",
           "Poster": "https://m.media-amazon.com/images/M/MV5BNDQ4YzFmNzktMmM5ZC00MDZjLTk1OTktNDE2ODE4YjM2MjJjXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
         }
-      ]
+    ];
 
+    
     return(
         <div>
-            <h1>This is my Read component!</h1>
-            <Movies myMovies={data}/>
+            {/* Title of the Read component */}
+            <h1>List of movies from Read Component</h1>
+            
+            {/* Render the Movies component, passing the data array as the myMovies prop */}
+            <Movies myMovies={data} />
         </div>
     )
 }
-export default Read;
+// Export the Read component so it can be used in other parts of the application
+export default Read; 
