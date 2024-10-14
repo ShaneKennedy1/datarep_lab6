@@ -8,6 +8,7 @@ import Header from './Components/header';
 import Footer from './Components/footer';
 import NavigationBar from './Components/navigationbar';
 import Read from './Components/read';
+import Create from './Components/create';
 
 
 function App() {
@@ -27,8 +28,8 @@ function App() {
           {/* Render the Read component. This will display movies */}
           <Route path="/read" element={<Read />} />
 
-          {/* Render the Footer component*/}
-          <Route path="/create" element={<Footer />} />
+          {/* Render the Create component*/}
+          <Route path="/create" element={<Create/>} />
         </Routes>
 
         {/* Display the footer */}
