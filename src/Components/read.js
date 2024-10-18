@@ -2,36 +2,39 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Movies from "./movies";
 
-
 const Read = () => {
 
-    // Movie data array containing information about movies
-    
-    const[movies, setMovies] = useState([]);
+    // State to store the array of movies
+    const [movies, setMovies] = useState([]);
 
-
+    // useEffect hook to make API request
     useEffect(
-      ()=>{
+      () => {
+        // Axios get request to fetch movies from an external API
         axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
-        .then((response)=>{
-          console.log(response.data.movies)
-          setMovies(response.data.movies);
+        .then((response) => {
+          // Logging the received movie data to the console
+          console.log(response.data.movies); 
+          // Setting the received movie data in the state
+          setMovies(response.data.movies);   
         })
-        .catch((error) =>{
-          console.log(error);
+        .catch((error) => {
+          // Logging any errors encountered during the request
+          console.log(error); 
         });
-      },[]
+      }, [] // Empty dependency array ensures this effect runs only once when the component is mounted
     );
 
-    return(
+    return (
         <div>
             {/* Title of the Read component */}
             <h1>List of movies from Read Component</h1>
             
-            {/* Render the Movies component, passing the data array as the myMovies prop */}
+            {/* Render the Movies component, passing the movie array as the myMovies prop */}
             <Movies myMovies={movies} />
         </div>
     )
 }
-// Export the Read component so it can be used in other parts of the application
-export default Read; 
+
+// Export the Read component 
+export default Read;
