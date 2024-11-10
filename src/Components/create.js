@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios"; 
 
 function Create() {
   // Defining state variables to store movie title, year, and poster URL
@@ -8,10 +9,20 @@ function Create() {
 
   // Function to handle form submission
   const handleSubmit = (e) => {
-  // Preventing default form submission behavior 
-    e.preventDefault();  
-    console.log(title);  
-  }
+    e.preventDefault();
+    
+    console.log(`Title: ${title}, Year: ${year}, Poster: ${poster}`);
+    
+    const movie = {
+      title: title,
+      year: year,
+      poster: poster
+    };
+    
+    axios.post('http://localhost:4000/api/movies', movie)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err.data));
+  };
 
   return (
     <div>

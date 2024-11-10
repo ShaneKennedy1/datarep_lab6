@@ -11,7 +11,7 @@ const Read = () => {
     useEffect(
       () => {
         // Axios get request to fetch movies from an external API
-        axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
+        axios.get('http://localhost:4000/api/movies')
         .then((response) => {
           // Logging the received movie data to the console
           console.log(response.data.movies); 
